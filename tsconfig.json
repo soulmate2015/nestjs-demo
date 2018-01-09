@@ -1,0 +1,50 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": "./",
+    "declaration": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "inlineSourceMap": true,
+    "isolatedModules": false,
+    "lib": [
+      "ES2015",
+      "ES2015.Promise",
+      "ES2015.Reflect",
+      "ES2015.Core",
+      "ES2015.Collection",
+      "ES2015.Generator",
+      "ES2015.Iterable",
+      "ES2015.Promise",
+      "ES2015.Proxy",
+      "ES2015.Reflect",
+      "ES2015.Symbol"
+    ],
+    "listEmittedFiles": true,
+    "listFiles": true,
+    "module": "commonjs",
+    "moduleResolution": "Node",
+    "noImplicitAny": false,
+    "noImplicitReturns": true,
+    "noLib": false,
+    "noUnusedLocals": false,
+    "outDir": "build",
+    "paths": {},
+    "removeComments": true,
+    "sourceMap": true,
+    "sourceRoot": "./src",
+    "suppressImplicitAnyIndexErrors": true,
+    "target": "ES6",
+    "typeRoots": [
+      "node_modules/@types"
+    ]
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/*.spec.ts"
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "name": "Nestjs-demo",
+  "version": "1.0.0",
+  "description": "Nest demo based on ES6、ES7",
+  "main": "index.js",
+  "scripts": {
+    "debug": "set NODE_ENV=dev&&nodemon index.js",
+    "prestart:prod": "tsc"
+  },
+  "dependencies": {
+    "@nestjs/common": "^4.5.4",
+    "@nestjs/core": "^4.5.4",
+    "@nestjs/microservices": "^4.5.3",
+    "@nestjs/testing": "^4.5.4",
+    "@nestjs/websockets": "^4.5.3",
+    "body-parser": "^1.18.2",
+    "config": "^1.29.0",
+    "cookie-parser": "^1.4.3",
+    "debug": "^3.1.0",
+    "lodash": "^4.17.4",
+    "mysql2": "^1.5.1",
+    "redis": "^2.7.1",
+    "reflect-metadata": "^0.1.10",
+    "request": "^2.83.0",
+    "rxjs": "^5.5.6",
+    "sequelize": "^4.28.0",
+    "typescript": "^2.6.2",
+    "winston": "^3.0.0-rc1"
+  },
+  "devDependencies": {
+    "@types/node": "^8.0.28",
+    "nodemon": "^1.12.1",
+    "ts-node": "^3.3.0"
+  },
+  "author": "soulmate2015",
+  "license": "ISC"
+}
