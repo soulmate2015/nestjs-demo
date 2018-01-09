@@ -5,7 +5,6 @@ import 'reflect-metadata';
 
 import { loggerMiddleware } from './modules/@common/middlewares/logger.middleware';
 import * as bodyParser from 'body-parser';
-// import * as cookieParser from 'cookie-parser';
 
 async function bootstrap() {
   const app = await NestFactory.create(ApplicationModule);
@@ -14,7 +13,6 @@ async function bootstrap() {
 
   // body解析
   await app.use(bodyParser.json());
-  // await app.use(cookieParser());
   await app.use(loggerMiddleware);
 
   /* 全局配置 */
@@ -22,7 +20,7 @@ async function bootstrap() {
   // 设置请求前缀
   await app.setGlobalPrefix('api');
   
-  await app.listen(config.port || 3000);
+  await app.listen(config.port || 4000);
 }
 
 bootstrap();

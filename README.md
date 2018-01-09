@@ -36,3 +36,10 @@ Node 依赖包安装：
 6. exception:  异常
 7. filter:  异常过滤
 ...
+
+## 四、Demo 请求
+1. POST http://localhost:4000/api/demo/create
+2. GET http://localhost:4000/api/demo/findAll
+3. GET http://localhost:4000/api/demo/:index
+4. GET http://localhost:4000/api/demo/noFound
+5. GET http://localhost:4000/api/demo/exception
