@@ -1,6 +1,14 @@
+<p align="center">
+  <a href="http://nestjs.com/" target="blank"><img src="http://kamilmysliwiec.com/public/nest-logo.png#1" alt="Nest Logo" /></a>
+</p>
+
 # Nestjs Demo
 
-基于[nestjs](https://github.com/nestjs/nest)框架，使用ES6、ES7语法，基于ts编译
+基于[nestjs](https://github.com/nestjs/nest)框架的Demo，使用ES6、ES7语法，基于ts编译
+
+Nest是构建高效，可扩展的Node.js服务器端应用程序的框架。它使用现代JavaScript，使用 TypeScript（保留与纯JavaScript的兼容性），并结合OOP（面向对象编程），FP（功能编程）和FRP（功能反应编程）的元素。
+
+在引擎盖下，Nest使用Express，可以方便地使用各种可用的第三方插件。
 
 ## 一、依赖包 Install
 
