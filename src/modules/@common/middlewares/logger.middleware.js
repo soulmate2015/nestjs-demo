@@ -1,6 +1,3 @@
-// import { existsSync, mkdirSync, writeSync } from 'fs';
-// import { resolve } from 'path';
-
 import { Logger } from '@nestjs/common';
 const logger = new Logger('httpLoggerMiddleware');
 
@@ -26,12 +23,6 @@ export function loggerMiddleware(req, res, next) {
     let body = Buffer.concat(chunks).toString('utf8') || 304;
 
     logger.log(`${req.originalUrl} - ${body}`);
-
-    // const logDirectory = resolve(__dirname, '../../../../', 'log');
-    // console.log(logDirectory);
-    // existsSync(resolve(logDirectory, 'http')) || mkdirSync(resolve(logDirectory, 'http'));
-    // writeSync(resolve(logDirectory, 'http'), `${req.path} - ${body}`);
-    // console.log(req.path, body);
 
     oldEnd.apply(res, arguments);
   };
