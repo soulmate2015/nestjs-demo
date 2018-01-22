@@ -43,7 +43,7 @@ Node 依赖包安装：
 5. middleware:  中间件
 6. exception:  异常
 7. filter:  异常过滤
-8. passportAuth: Token校验，解析
+8. passportAuth: 基于jwt和passport的Token校验，解析
 ...
 
 ## 四、Demo 请求
