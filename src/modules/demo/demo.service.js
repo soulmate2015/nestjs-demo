@@ -1,9 +1,11 @@
-import { Component, HttpException } from '@nestjs/common';
+import { Component, HttpException, Dependencies } from '@nestjs/common';
 
 @Component()
+@Dependencies('PassportAuthService')
 export class DemoService {
-  constructor() {
+  constructor(authService) {
     this.arr = ['default'];
+    this.authService = authService;
   }
 
   create(item) {
@@ -24,5 +26,10 @@ export class DemoService {
       throw new HttpException('Demo no found', 404);
     }
     return Promise.resolve(user);
+  }
+
+  async login(userInfo) {
+    const token = await this.authService.createToken(userInfo);
+    return token;
   }
 }

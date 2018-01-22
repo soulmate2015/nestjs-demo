@@ -56,4 +56,24 @@ export class DemoController {
     // res.status(HttpStatus.OK).json({ status: 'OK' });
   }
 
+  // GET /api/demo/needAuth
+  @Get('/needAuth')
+  @Bind(Req(), Res())
+  async needAuth(req, res) {
+    res.status(HttpStatus.OK).json({ status: 'OK' });
+  }
+
+  // GET /api/demo/login
+  @Get('/login')
+  @Bind(Req(), Res())
+  async login(req, res) {
+    const userInfo = {
+      username: 'root',
+      password: '123456',
+    }
+    const ret = await this.demoService.login(userInfo);
+    const { access_token, expires_in } = ret;
+    res.cookie('jwt', access_token, { maxAge: expires_in, httpOnly: true });
+    res.status(HttpStatus.OK).json({ status: 'OK' });
+  }
 }

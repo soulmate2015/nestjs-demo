@@ -9,13 +9,14 @@ import { ModelModule } from './@model/model.module';
 import { EnumModule } from './@enum/enum.module';
 import { LoggerModule } from './@logger/logger.module';
 import { RequestModule } from './@request/request.module';
+import { PassportAuthModule } from './@passportAuth/auth.module'
 
 /* 业务节点 */
 
 import { DemoModule } from './demo/demo.module';
 
 @Module({
-  modules: [CommonModule, ConfigModule, LoggerModule, ModelModule, EnumModule, RequestModule, DemoModule],
+  modules: [CommonModule, ConfigModule, LoggerModule, ModelModule, EnumModule, RequestModule, PassportAuthModule, DemoModule],
 })
 export class ApplicationModule {
 

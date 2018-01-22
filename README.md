@@ -43,6 +43,7 @@ Node 依赖包安装：
 5. middleware:  中间件
 6. exception:  异常
 7. filter:  异常过滤
+8. passportAuth: Token校验，解析
 ...
 
 ## 四、Demo 请求
@@ -51,6 +52,8 @@ Node 依赖包安装：
 3. GET http://localhost:4000/api/demo/:index
 4. GET http://localhost:4000/api/demo/noFound
 5. GET http://localhost:4000/api/demo/exception
+6. GET http://localhost:4000/api/demo/needAuth (校验token)
+7. GET http://localhost:4000/api/demo/login (登陆写入token)
 
 
 ## 顺便附上大佬的一篇博文
