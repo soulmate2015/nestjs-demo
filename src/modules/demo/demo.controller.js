@@ -5,6 +5,7 @@ import {
 } from '@nestjs/common';
 import { DemoException } from '../@common/exceptions/demo.exception';
 import { DemoExceptionFilter } from '../@common/filters/demo.filter';
+import { User } from '../@common/decorators/user.decorator';
 
 @Controller('demo')
 @Dependencies('DemoService')
@@ -58,9 +59,9 @@ export class DemoController {
 
   // GET /api/demo/needAuth
   @Get('/needAuth')
-  @Bind(Req(), Res())
-  async needAuth(req, res) {
-    res.status(HttpStatus.OK).json({ status: 'OK' });
+  @Bind(User(), Res())
+  async needAuth(user, res) {
+    res.status(HttpStatus.OK).json({ status: 'OK', payload: user });
   }
 
   // GET /api/demo/login
@@ -73,7 +74,7 @@ export class DemoController {
     }
     const ret = await this.demoService.login(userInfo);
     const { access_token, expires_in } = ret;
-    res.cookie('jwt', access_token, { maxAge: expires_in, httpOnly: true });
+    res.cookie('jwt', access_token, { maxAge: expires_in * 1000, httpOnly: true });
     res.status(HttpStatus.OK).json({ status: 'OK' });
   }
 }
