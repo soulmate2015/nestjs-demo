@@ -6,8 +6,9 @@ const logger = new Logger('httpLoggerMiddleware');
 export function loggerMiddleware(req, res, next) {
 
   // 获取静态资源的接口不做日志记录，会报错
-  if (req.originalUrl.indexOf('favicon.ico') > -1 || req.originalUrl.indexOf('/static') > -1) {
-    logger.log(req.originalUrl);
+  const ignoreList = ['favicon.ico', '/api-doc', '/webSocket'];
+  if (ignoreList.some(url => req.originalUrl.indexOf(url) > -1)) {
+    logger.log(`${req.method} ${req.originalUrl}`);
     return next();
   }
 

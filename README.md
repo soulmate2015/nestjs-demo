@@ -44,6 +44,8 @@ Node 依赖包安装：
 6. exception:  异常
 7. filter:  异常过滤
 8. passportAuth: Token校验，解析
+9. webSocket  基于 socket.io
+10. swagger
 ...
 
 ## 四、Demo 请求
@@ -54,6 +56,8 @@ Node 依赖包安装：
 5. GET http://localhost:4000/api/demo/exception
 6. GET http://localhost:4000/api/demo/needAuth (校验token)
 7. GET http://localhost:4000/api/demo/login (登陆写入token)
+8. GET http://localhost:4000/api/demo/webSocket (webSocket)
+9. GET http://localhost:4000/api-doc (swagger)
 
 
 ## 顺便附上大佬的一篇博文

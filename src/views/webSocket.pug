@@ -1,0 +1,26 @@
+html
+head
+  script(src='/socket.io/socket.io.js')
+body
+  p='WEBSOCKET TEST!'
+  #container
+  script(type='text/javascript').
+    const socket = io('http://localhost:3000', {transports: ["websocket"], upgrade: false});
+
+    // 建立连接事件
+    socket.on('CONNECT', () => {
+      console.log('建立连接');
+    });
+
+    // 接收消息事件
+    socket.on('TEST_MSG', (data) => {
+      console.log('接受事件');
+      //- console.log(data);
+      document.getElementById('container').innerHTML = `<h1>${data}</h1>`;
+    });
+
+    // 断开连接事件
+    socket.on('DISCONNECT', () => {
+      console.log('断开连接');
+      location.reload();
+    });

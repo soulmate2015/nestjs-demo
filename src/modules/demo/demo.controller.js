@@ -3,11 +3,17 @@ import {
   Controller, Bind, Dependencies,
   HttpStatus, UseFilters
 } from '@nestjs/common';
+import {
+  ApiUseTags, ApiBearerAuth,
+  ApiOperation,
+  ApiImplicitQuery, ApiImplicitBody, ApiImplicitParam, ApiResponse,
+} from '@nestjs/swagger';
 import { DemoException } from '../@common/exceptions/demo.exception';
 import { DemoExceptionFilter } from '../@common/filters/demo.filter';
 import { User } from '../@common/decorators/user.decorator';
 
-@Controller('demo')
+@ApiUseTags('demo（demo接口）')
+@Controller('api/demo')
 @Dependencies('DemoService')
 export class DemoController {
   constructor(demoService) {
@@ -77,4 +83,12 @@ export class DemoController {
     res.cookie('jwt', access_token, { maxAge: expires_in * 1000, httpOnly: true });
     res.status(HttpStatus.OK).json({ status: 'OK' });
   }
+
+  // GET /api/demo/webSocket
+  @Get('/webSocket')
+  @Bind(Res())
+  async webSocket(res) {
+    res.render('webSocket');
+  }
+
 }
