@@ -46,6 +46,7 @@ Node 依赖包安装：
 8. passportAuth: 基于jwt和passport的Token校验，解析
 9. webSocket  基于 socket.io
 10. swagger
+11. error stack 错误堆栈信息 基于 source-map
 ...
 
 ## 四、Demo 请求
@@ -57,7 +58,8 @@ Node 依赖包安装：
 6. GET http://localhost:4000/api/demo/needAuth (校验token)
 7. GET http://localhost:4000/api/demo/login (登陆写入token)
 8. GET http://localhost:4000/api/demo/webSocket (webSocket)
-9. GET http://localhost:4000/api-doc (swagger)
+9. GET http://localhost:4000/api/demo/error (error stack)
+10. GET http://localhost:4000/api-doc (swagger)
 
 
 ## 顺便附上大佬的一篇博文

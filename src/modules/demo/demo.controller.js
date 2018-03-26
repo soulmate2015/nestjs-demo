@@ -11,6 +11,7 @@ import {
 import { DemoException } from '../@common/exceptions/demo.exception';
 import { DemoExceptionFilter } from '../@common/filters/demo.filter';
 import { User } from '../@common/decorators/user.decorator';
+import { ErrorStack } from '../@common/exceptions/errorStack.exception';
 
 @ApiUseTags('demo（demo接口）')
 @Controller('api/demo')
@@ -89,6 +90,13 @@ export class DemoController {
   @Bind(Res())
   async webSocket(res) {
     res.render('webSocket');
+  }
+
+  // GET /api/demo/error
+  @Get('/error')
+  @UseFilters(new ErrorStack())
+  async throwError() {
+    throw new Error('Very Bad Error');
   }
 
 }

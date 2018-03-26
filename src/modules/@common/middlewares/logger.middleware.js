@@ -28,9 +28,12 @@ export function loggerMiddleware(req, res, next) {
     }
 
     try {
+      const reqBody = req.method === 'POST' ? `- ${JSON.stringify(req.body)}` : '';
       // 接口返回缓存值的（304），不会再写入输出流
-      let body = Buffer.concat(chunks).toString('utf8') || 304;
-      logger.log(`${req.originalUrl} - ${body}`);
+      let resBody = Buffer.concat(chunks).toString('utf8') || '304';
+      // 接口返回html格式，返回体太大，不再写入日志
+      resBody = resBody && resBody.indexOf('<!DOCTYPE html>') > -1 ? 'html' : resBody;
+      logger.log(`${req.originalUrl} - ${resBody}`);
     } catch (e) {
       logger.log(`${req.originalUrl}`);
       logger.error(e);
